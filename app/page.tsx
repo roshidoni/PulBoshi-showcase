@@ -156,7 +156,6 @@ export default function Home() {
             <span className="text-xl font-bold text-zinc-300">Expo</span>
             <span className="text-xl font-bold text-zinc-300">TypeScript</span>
             <span className="text-xl font-bold text-zinc-300">AI SDK</span>
-            <span className="text-xl font-bold text-zinc-300">Next.js</span>
           </div>
         </div>
       </section>
