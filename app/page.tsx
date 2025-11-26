@@ -120,23 +120,32 @@ export default function Home() {
           <h2 className="mb-16 text-center text-3xl font-bold tracking-tight sm:text-4xl">Roadmap</h2>
           <div className="space-y-8">
             <div className="flex gap-4 items-start">
+              <div className="mt-1.5 shrink-0 text-green-500">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+              </div>
+              <div>
+                <h3 className="text-lg font-bold text-white">Idea</h3>
+                <p className="text-zinc-400">Concept validation and market research.</p>
+              </div>
+            </div>
+            <div className="flex gap-4 items-start">
               <div className="w-4 h-4 mt-1.5 rounded-full bg-green-500 shrink-0 shadow-[0_0_10px_rgba(34,197,94,0.5)]" />
               <div>
-                <h3 className="text-lg font-bold text-white">Prototyping (Current)</h3>
+                <h3 className="text-lg font-bold text-white">Prototype (Current)</h3>
                 <p className="text-zinc-400">Core mechanics and AI model integration.</p>
               </div>
             </div>
             <div className="flex gap-4 items-start opacity-50">
               <div className="w-4 h-4 mt-1.5 rounded-full bg-zinc-700 shrink-0" />
               <div>
-                <h3 className="text-lg font-bold text-white">MVP Release</h3>
+                <h3 className="text-lg font-bold text-white">MVP</h3>
                 <p className="text-zinc-400">Beta launch for university students.</p>
               </div>
             </div>
             <div className="flex gap-4 items-start opacity-50">
               <div className="w-4 h-4 mt-1.5 rounded-full bg-zinc-700 shrink-0" />
               <div>
-                <h3 className="text-lg font-bold text-white">Public Launch</h3>
+                <h3 className="text-lg font-bold text-white">Launched</h3>
                 <p className="text-zinc-400">Full release with all three modes active.</p>
               </div>
             </div>
