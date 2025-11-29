@@ -12,6 +12,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+
 export const metadata: Metadata = {
   title: "AI500 Hackathon Showcase",
   description: "Stop Surviving. Start Thriving. The financial AI that adapts to you.",

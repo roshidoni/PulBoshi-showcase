@@ -1,62 +1,108 @@
-import Image from "next/image";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white selection:bg-green-500 selection:text-black">
       {/* Hero Section */}
       {/* Hero Section */}
-      <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-4 py-24 md:grid md:grid-cols-2 md:gap-12 md:text-left">
+      <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden py-24">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-stops))] from-blue-900/20 via-black to-black" />
 
-        {/* Left Column: Headline & CTA */}
-        <div className="flex flex-col items-center md:items-start z-10">
-          <h1 className="mb-6 text-5xl font-bold tracking-tighter sm:text-4xl bg-linear-to-b from-white to-zinc-500 bg-clip-text text-transparent text-center md:text-left">
-            <span className="text-emerald-400 drop-shadow-[0_0_10px_rgba(52,211,153,0.4)]">#1</span>{" "}
-            <span className="text-white">AI</span>{" "}
-            <span className="text-emerald-400 drop-shadow-[0_0_10px_rgba(52,211,153,0.4)]">Financial</span>{" "}
-            advisor in Uzbekistan
-          </h1>
-          <p className="mb-8 max-w-2xl text-lg text-zinc-400 sm:text-xl text-center md:text-left">
-            This app helps you to save & spend & invest smarter while understanding your financial situation. 
-            {/* maybe goals and risk tolerance */}
-          </p>
-          <button className="rounded-full border border-zinc-800 bg-black px-8 py-3 font-semibold text-white transition hover:bg-zinc-900">
-            Learn More
-          </button>
-        </div>
+        <div className="container mx-auto px-6 md:px-6 w-full md:grid md:grid-cols-2 md:gap-12 md:text-left">
+          {/* Left Column: Headline & CTA */}
+          <div className="flex flex-col justify-center z-10">
+            <h1 className="mb-6 text-5xl font-bold tracking-tighter sm:text-4xl bg-linear-to-b from-white to-zinc-500 bg-clip-text text-transparent text-center md:text-left">
+              <span className="text-emerald-400 drop-shadow-[0_0_10px_rgba(52,211,153,0.4)]">#1</span>{" "}
+              <span className="text-white">AI</span>{" "}
+              <span className="text-emerald-400 drop-shadow-[0_0_10px_rgba(52,211,153,0.4)]">Financial</span>{" "}
+              advisor in Uzbekistan
+            </h1>
+            <p className="mb-8 max-w-2xl text-lg text-zinc-400 sm:text-xl text-center md:text-left">
+              This app helps you to save & spend & invest smarter while understanding your financial situation.
+              {/* maybe goals and risk tolerance */}
+            </p>
+            <a href="#solution" className="rounded-full border border-zinc-800 bg-black px-8 py-3 font-semibold text-white transition hover:bg-zinc-900 w-fit">
+              What problem are we solving?
+            </a>
+          </div>
 
-        {/* Right Column: iPhone Video Demo */}
-        <div className="relative mt-12 flex justify-center md:mt-0 z-10">
-          <div className="relative mx-auto border-zinc-800 bg-zinc-800 border-[14px] rounded-[2.5rem] h-[600px] w-[300px] shadow-xl">
-            <div className="w-[148px] h-[18px] bg-zinc-800 top-0 rounded-b-[1rem] left-1/2 -translate-x-1/2 absolute z-20"></div>
-            <div className="h-[32px] w-[3px] bg-zinc-800 absolute -start-[17px] top-[72px] rounded-s-lg"></div>
-            <div className="h-[46px] w-[3px] bg-zinc-800 absolute -start-[17px] top-[124px] rounded-s-lg"></div>
-            <div className="h-[46px] w-[3px] bg-zinc-800 absolute -start-[17px] top-[178px] rounded-s-lg"></div>
-            <div className="h-[64px] w-[3px] bg-zinc-800 absolute -end-[17px] top-[142px] rounded-e-lg"></div>
-            <div className="rounded-[2rem] overflow-hidden w-full h-full bg-zinc-900 relative">
-              {/* Video Placeholder */}
-              <div className="absolute inset-0 flex items-center justify-center bg-zinc-950 text-zinc-700">
-                <span className="sr-only">App Demonstration Video</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><polygon points="5 3 19 12 5 21 5 3" /></svg>
+          {/* Right Column: iPhone Video Demo */}
+          <div className="relative mt-12 flex justify-center md:mt-0 z-10">
+            <div className="relative mx-auto border-zinc-800 bg-zinc-800 border-[14px] rounded-[35px] h-[600px] w-[300px] shadow-xl">
+              <div className="w-[148px] h-[18px] bg-zinc-800 top-0 rounded-b-[1rem] left-1/2 -translate-x-1/2 absolute z-20"></div>
+              <div className="h-[32px] w-[3px] bg-zinc-800 absolute -start-[17px] top-[72px] rounded-s-lg"></div>
+              <div className="h-[46px] w-[3px] bg-zinc-800 absolute -start-[17px] top-[124px] rounded-s-lg"></div>
+              <div className="h-[46px] w-[3px] bg-zinc-800 absolute -start-[17px] top-[178px] rounded-s-lg"></div>
+              <div className="h-[64px] w-[3px] bg-zinc-800 absolute -end-[17px] top-[142px] rounded-e-lg"></div>
+              <div className="rounded-[21px] overflow-hidden w-full h-full bg-zinc-900 relative">
+                <video className="w-full h-full object-cover" autoPlay loop muted playsInline>
+                  <source src="https://xdey7k9l8nr8y6um.public.blob.vercel-storage.com/AI500.mp4" type="video/mp4" />
+                </video>
               </div>
-              {/* Actual Video Element (Uncomment and add source when available) */}
-              {/* <video className="w-full h-full object-cover" autoPlay loop muted playsInline>
-                <source src="/demo-video.mp4" type="video/mp4" />
-              </video> */}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Problem Section */}
-      <section className="py-24 px-4 bg-zinc-950">
-        <div className="mx-auto max-w-4xl text-center">
-          <h2 className="mb-16 text-center text-3xl font-bold tracking-tight sm:text-5xl">
-            The Problem: Lack of Financial Literacy
-          </h2>
-          <p className="text-2xl text-zinc-400 leading-relaxed">
-            Nobody teaches people how to actually manage money, so most people figure it out the hard way. This leads to financial stress, poor decisions, and cycles of debt.
-          </p>
+      {/* Solution Section */}
+      <section id="solution" className="py-24 px-4 bg-zinc-950">
+        <div className="mx-auto max-w-6xl">
+          <div className="grid gap-8 md:grid-cols-2">
+            {/* Card 1: Employee (Negative) */}
+            <div className="relative rounded-3xl border border-red-500/30 bg-red-500/5 p-8 md:p-10">
+              <div className="flex items-center justify-between mb-8">
+                <h3 className="text-2xl md:text-3xl font-bold text-red-400">Problem</h3>
+                <div className="rounded-full bg-red-500/20 p-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="text-red-500"><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" /><line x1="12" y1="17" x2="12.01" y2="17" /></svg>
+                </div>
+              </div>
+              <ul className="space-y-6 text-lg text-zinc-300">
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500" />
+                  <span>Many people don't have access to financial education</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500" />
+                  <span>Many people don't have access to financial education</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500" />
+                  <span>Many people don't have access to financial education</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500" />
+                  <span>Many people don't have access to financial education</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500" />
+                  <span>Many people don't have access to financial education</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Card 2: Entrepreneur (Positive) */}
+            <div className="relative rounded-3xl border border-emerald-500/30 bg-emerald-500/5 p-8 md:p-10">
+              <div className="flex items-center justify-between mb-8">
+                <h3 className="text-2xl md:text-3xl font-bold text-emerald-400">Solution</h3>
+                <div className="rounded-full bg-emerald-500/20 p-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="text-emerald-500"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+              </div>
+              <ul className="space-y-6 text-lg text-zinc-300">
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500" />
+                  <span>Many people don't have access to financial education</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500" />
+                  <span>Many people don't have access to financial education</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500" />
+                  <span>Many people don't have access to financial education</span>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -163,14 +209,14 @@ export default function Home() {
               <div className="w-4 h-4 mt-1.5 rounded-full bg-zinc-700 shrink-0" />
               <div>
                 <h3 className="text-lg font-bold text-white">MVP</h3>
-                <p className="text-zinc-400"></p>
+                <p className="text-zinc-400">Working app only available for students</p>
               </div>
             </div>
             <div className="flex gap-4 items-start opacity-50">
               <div className="w-4 h-4 mt-1.5 rounded-full bg-zinc-700 shrink-0" />
               <div>
                 <h3 className="text-lg font-bold text-white">Launched</h3>
-                <p className="text-zinc-400">Full release with all three modes active.</p>
+                <p className="text-zinc-400">Working app for every people.</p>
               </div>
             </div>
           </div>
