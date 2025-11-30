@@ -119,7 +119,7 @@ export default function Home() {
               </div>
               <h3 className="mb-2 text-2xl font-bold text-white">Save</h3>
               <p className="text-zinc-400">
-                Critically low funds? We lock down unnecessary spending and guide you to safety until your next paycheck.
+                Critically low funds? We will provide cheapest options on the market with our tools for you to "survive".
               </p>
             </div>
 
@@ -130,7 +130,7 @@ export default function Home() {
               </div>
               <h3 className="mb-2 text-2xl font-bold text-white">Spend</h3>
               <p className="text-zinc-400">
-                Stable ground? We help you balance living expenses with smart self-investment to fuel your future.
+                Stable ground? We won't let you waste your money with our AI and tools for optimal prices on the market.
               </p>
             </div>
 
@@ -141,7 +141,7 @@ export default function Home() {
               </div>
               <h3 className="mb-2 text-2xl font-bold text-white">Invest</h3>
               <p className="text-zinc-400">
-                High net worth?
+                Want to grow your capital? We will provide smart investment options for you.
               </p>
             </div>
           </div>
