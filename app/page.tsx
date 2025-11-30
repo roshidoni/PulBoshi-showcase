@@ -34,7 +34,7 @@ export default function Home() {
               <div className="h-[64px] w-[3px] bg-zinc-800 absolute -end-[17px] top-[142px] rounded-e-lg"></div>
               <div className="rounded-[21px] overflow-hidden w-full h-full bg-zinc-900 relative">
                 <video className="w-full h-full object-cover" autoPlay loop muted playsInline>
-                  <source src="https://xdey7k9l8nr8y6um.public.blob.vercel-storage.com/AI500.mp4" type="video/mp4" />
+                  <source src="https://xdey7k9l8nr8y6um.public.blob.vercel-storage.com/AI500" type="video/mp4" />
                 </video>
               </div>
             </div>
