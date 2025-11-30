@@ -3,7 +3,6 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white selection:bg-green-500 selection:text-black">
       {/* Hero Section */}
-      {/* Hero Section */}
       <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden py-24">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-stops))] from-blue-900/20 via-black to-black" />
 
@@ -17,7 +16,7 @@ export default function Home() {
               advisor in Uzbekistan
             </h1>
             <p className="mb-8 max-w-2xl text-lg text-zinc-400 sm:text-xl text-center md:text-left">
-              This app helps you to save & spend & invest smarter while understanding your financial situation.
+              This mobile app helps you to save & spend & invest smarter while understanding your financial situation.
               {/* maybe goals and risk tolerance */}
             </p>
             <a href="#solution" className="rounded-full border border-zinc-800 bg-black px-8 py-3 font-semibold text-white transition hover:bg-zinc-900 w-fit">
@@ -56,25 +55,21 @@ export default function Home() {
                 </div>
               </div>
               <ul className="space-y-6 text-lg text-zinc-300">
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500" />
-                  <span>Many people don't have access to financial education</span>
+                <li className="flex items-center gap-3">
+                  <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500" />
+                  <span>There is no financial assistant in Uzbekistan</span>
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500" />
-                  <span>Many people don't have access to financial education</span>
+                <li className="flex items-center gap-3">
+                  <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500" />
+                  <span>Young adults waste their money on unnecessary expenses because of financial illiteracy</span>
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500" />
-                  <span>Many people don't have access to financial education</span>
+                <li className="flex items-center gap-3">
+                  <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500" />
+                  <span>Regular people might spend a lot on human financial advisors</span>
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500" />
-                  <span>Many people don't have access to financial education</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500" />
-                  <span>Many people don't have access to financial education</span>
+                <li className="flex items-center gap-3">
+                  <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500" />
+                  <span>Research on market price takes longer ⏰</span>
                 </li>
               </ul>
             </div>
@@ -88,17 +83,21 @@ export default function Home() {
                 </div>
               </div>
               <ul className="space-y-6 text-lg text-zinc-300">
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500" />
-                  <span>Many people don't have access to financial education</span>
+                <li className="flex items-center gap-3">
+                  <span className=" h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500" />
+                  <span>We are the <b>first financial AI assistant</b> in Uzbekistan</span>
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500" />
-                  <span>Many people don't have access to financial education</span>
+                <li className="flex items-center gap-3">
+                  <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500" />
+                  <span>We help young adults <b>save and spend smarter</b> while understanding their financial situation</span>
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500" />
-                  <span>Many people don't have access to financial education</span>
+                <li className="flex items-center gap-3">
+                  <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500" />
+                  <span>AI Financial advisor is available <b>24/7 for cheaper/free</b></span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500" />
+                  <span>Our AI tools make it <b>easy to explore</b> market price with very up to date information</span>
                 </li>
               </ul>
             </div>
@@ -110,7 +109,7 @@ export default function Home() {
       <section className="py-24 px-4">
         <div className="mx-auto max-w-6xl">
           <h2 className="mb-16 text-center text-3xl font-bold tracking-tight sm:text-5xl">
-            One App. Three Modes.
+            Save & Spend & Invest
           </h2>
           <div className="grid gap-8 md:grid-cols-3">
             {/* Survival Mode */}
@@ -118,7 +117,7 @@ export default function Home() {
               <div className="mb-4 inline-block rounded-full bg-red-500/10 p-3 text-red-500">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v20" /><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" /></svg>
               </div>
-              <h3 className="mb-2 text-2xl font-bold text-white">Survival Mode</h3>
+              <h3 className="mb-2 text-2xl font-bold text-white">Save</h3>
               <p className="text-zinc-400">
                 Critically low funds? We lock down unnecessary spending and guide you to safety until your next paycheck.
               </p>
@@ -129,7 +128,7 @@ export default function Home() {
               <div className="mb-4 inline-block rounded-full bg-blue-500/10 p-3 text-blue-500">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2" /></svg>
               </div>
-              <h3 className="mb-2 text-2xl font-bold text-white">Growth Mode</h3>
+              <h3 className="mb-2 text-2xl font-bold text-white">Spend</h3>
               <p className="text-zinc-400">
                 Stable ground? We help you balance living expenses with smart self-investment to fuel your future.
               </p>
@@ -140,9 +139,9 @@ export default function Home() {
               <div className="mb-4 inline-block rounded-full bg-emerald-500/10 p-3 text-emerald-500">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" x2="12" y1="2" y2="22" /><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" /></svg>
               </div>
-              <h3 className="mb-2 text-2xl font-bold text-white">Wealth Mode</h3>
+              <h3 className="mb-2 text-2xl font-bold text-white">Invest</h3>
               <p className="text-zinc-400">
-                High net worth? Advanced strategies to grow your assets and optimize your portfolio.
+                High net worth?
               </p>
             </div>
           </div>
@@ -153,20 +152,23 @@ export default function Home() {
       <section className="py-24 px-4 bg-zinc-950">
         <div className="mx-auto max-w-4xl">
           <h2 className="mb-16 text-center text-3xl font-bold tracking-tight sm:text-4xl">
-            Meet the Team
+            Team
           </h2>
           <div className="grid gap-8 md:grid-cols-2">
             <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-zinc-900 border border-zinc-800">
-              <div className="w-24 h-24 bg-zinc-800 rounded-full mb-4 flex items-center justify-center text-2xl font-bold text-zinc-600">AC</div>
+              <img src="https://xdey7k9l8nr8y6um.public.blob.vercel-storage.com/Abdussomad" alt="Abdussomad Mahmud" className="w-24 h-24 rounded-full mb-4 object-cover" />
               <h3 className="text-xl font-bold text-white">Abdussomad Mahmud</h3>
               <p className="text-blue-400 mb-2">Software Engineer</p>
-              <p className="text-zinc-400 text-sm">Software Engineer with expertise in React Native, TypeScript, and modern web technologies for 3 years.</p>
+              <p className="text-zinc-400 text-sm">Software Engineer experienced in React, React Native, TypeScript, and Next.js for 3 years.</p>
+              <a href="https://www.linkedin.com/in/abdussomad/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 transition-colors text-sm mt-3 inline-flex items-center gap-1">
+                LinkedIn →
+              </a>
             </div>
             <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-zinc-900 border border-zinc-800">
-              <div className="w-24 h-24 bg-zinc-800 rounded-full mb-4 flex items-center justify-center text-2xl font-bold text-zinc-600">SJ</div>
+              <img src="https://xdey7k9l8nr8y6um.public.blob.vercel-storage.com/Umar.jpg" alt="Umar Ibragimov" className="w-24 h-24 rounded-full mb-4 object-cover" />
               <h3 className="text-xl font-bold text-white">Umar Ibragimov</h3>
               <p className="text-purple-400 mb-2">Backend Developer & UI/UX Designer</p>
-              <p className="text-zinc-400 text-sm">Full Stack developer with expertise in backend systems and intuitive UI/UX design.</p>
+              <p className="text-zinc-400 text-sm">UX-Focused Express.js and React Developer with a year experience</p>
             </div>
           </div>
         </div>
@@ -199,24 +201,26 @@ export default function Home() {
               </div>
             </div>
             <div className="flex gap-4 items-start">
-              <div className="w-4 h-4 mt-1.5 rounded-full bg-green-500 shrink-0 shadow-[0_0_10px_rgba(34,197,94,0.5)]" />
+              <div className="mt-1.5 shrink-0 text-green-500">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+              </div>
               <div>
-                <h3 className="text-lg font-bold text-white">Prototype (Current)</h3>
-                <p className="text-zinc-400">Integrated AI with Mobile application. </p>
+                <h3 className="text-lg font-bold text-white">Prototype</h3>
+                <p className="text-zinc-400">Integrated AI with Mobile application and tested AI capabilities.</p>
               </div>
             </div>
-            <div className="flex gap-4 items-start opacity-50">
-              <div className="w-4 h-4 mt-1.5 rounded-full bg-zinc-700 shrink-0" />
+            <div className="flex gap-4 items-start">
+              <div className="w-4 h-4 mt-1.5 rounded-full bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.5)] shrink-0" />
               <div>
-                <h3 className="text-lg font-bold text-white">MVP</h3>
-                <p className="text-zinc-400">Working app only available for students</p>
+                <h3 className="text-lg font-bold text-white">MVP (Working on)</h3>
+                <p className="text-zinc-400">AI Financial advisor for <b>only students</b></p>
               </div>
             </div>
             <div className="flex gap-4 items-start opacity-50">
               <div className="w-4 h-4 mt-1.5 rounded-full bg-zinc-700 shrink-0" />
               <div>
                 <h3 className="text-lg font-bold text-white">Launched</h3>
-                <p className="text-zinc-400">Working app for every people.</p>
+                <p className="text-zinc-400">AI Financial advisor for every professionals. Additional tools will be added to enhance AI output. </p>
               </div>
             </div>
           </div>
@@ -227,7 +231,7 @@ export default function Home() {
       <section className="py-24 px-4 border-t border-zinc-900">
         <div className="mx-auto max-w-6xl text-center">
           <p className="mb-8 text-sm font-semibold uppercase tracking-widest text-zinc-500">
-            Powered By
+            Built with
           </p>
           <div className="flex flex-wrap justify-center gap-8 md:gap-16 opacity-70 grayscale transition duration-500 hover:grayscale-0">
             {/* Simple text placeholders for logos for now */}
@@ -238,10 +242,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <footer className="py-8 text-center text-zinc-600 text-sm border-t border-zinc-900">
-        <p>© 2024 AI500 Hackathon Team. All rights reserved.</p>
-      </footer>
     </main>
   );
 }
