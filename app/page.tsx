@@ -47,6 +47,28 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Demo Video Section */}
+      <section className="py-24 px-4 bg-zinc-950/50">
+        <div className="mx-auto max-w-4xl text-center">
+          <h2 className="mb-8 text-center text-3xl font-bold tracking-tight sm:text-4xl">
+            Demo <span className="text-emerald-400">Video</span>
+          </h2>
+          <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900 shadow-2xl shadow-emerald-500/10 transition-transform hover:scale-[1.01]">
+            <iframe
+              className="absolute inset-0 h-full w-full"
+              src="https://www.youtube.com/embed/OlDjJMbc4Sg?si=pLLWuv6L8Oeo8UwF"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            ></iframe>
+          </div>
+          <p className="mt-6 text-zinc-400 text-sm">
+            PulBoshi qanday ishlashini 5 daqiqada bilib oling. tavsiya etilgan tezlik 1.25x
+          </p>
+        </div>
+      </section>
+
       {/* Solution Section - Comparison Table */}
       <section id="solution" className="py-24 px-4 bg-zinc-950">
         <div className="mx-auto max-w-4xl">
