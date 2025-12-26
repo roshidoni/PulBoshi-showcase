@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -10,18 +11,22 @@ export default function Home() {
           {/* Left Column: Headline & CTA */}
           <div className="flex flex-col justify-center z-10">
             <h1 className="mb-6 text-5xl font-bold tracking-tighter sm:text-4xl bg-linear-to-b from-white to-zinc-500 bg-clip-text text-transparent text-center md:text-left">
+              <span className="text-emerald-400 drop-shadow-[0_0_10px_rgba(52,211,153,0.4)]">O'zbekistondagi</span>{" "}
               <span className="text-emerald-400 drop-shadow-[0_0_10px_rgba(52,211,153,0.4)]">#1</span>{" "}
               <span className="text-white">AI</span>{" "}
-              <span className="text-emerald-400 drop-shadow-[0_0_10px_rgba(52,211,153,0.4)]">Financial</span>{" "}
-              advisor in Uzbekistan
+              moliyaviy maslahatchi
             </h1>
             <p className="mb-8 max-w-2xl text-lg text-zinc-400 sm:text-xl text-center md:text-left">
-              This mobile app helps you to save & spend & invest smarter while understanding your financial situation.
-              {/* maybe goals and risk tolerance */}
+              Ushbu mobil ilova moliyaviy holatingizni tushunish bilan birga tejashingiz, sarflashingiz va aqlli sarmoya kiritishingizga yordam beradi.
             </p>
-            <a href="#solution" className="rounded-full border border-zinc-800 bg-black px-8 py-3 font-semibold text-white transition hover:bg-zinc-900 w-fit">
-              What problem are we solving?
-            </a>
+            <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+              <a href="#solution" className="rounded-full border border-zinc-800 bg-black px-8 py-3 font-semibold text-white transition hover:bg-zinc-900 w-fit">
+                Nega Pulboshi?
+              </a>
+              <Link href="/45-day-plan" className="rounded-full bg-emerald-500 px-8 py-3 font-bold text-black transition hover:bg-emerald-400 hover:scale-105 active:scale-95 w-fit">
+                45 kunlik reja
+              </Link>
+            </div>
           </div>
 
           {/* Right Column: iPhone Video Demo */}
@@ -42,65 +47,59 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Solution Section */}
+      {/* Solution Section - Comparison Table */}
       <section id="solution" className="py-24 px-4 bg-zinc-950">
-        <div className="mx-auto max-w-6xl">
-          <div className="grid gap-8 md:grid-cols-2">
-            {/* Card 1: Employee (Negative) */}
-            <div className="relative rounded-3xl border border-red-500/30 bg-red-500/5 p-8 md:p-10">
-              <div className="flex items-center justify-between mb-8">
-                <h3 className="text-2xl md:text-3xl font-bold text-red-400">Problem</h3>
-                <div className="rounded-full bg-red-500/20 p-1">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="text-red-500"><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" /><line x1="12" y1="17" x2="12.01" y2="17" /></svg>
-                </div>
+        <div className="mx-auto max-w-4xl">
+          <h2 className="mb-16 text-center text-3xl font-bold tracking-tight sm:text-4xl">
+            Nima uchun <span className="text-emerald-400">PulBoshi</span>?
+          </h2>
+
+          {/* Comparison Table */}
+          <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/50">
+            {/* Table Header */}
+            <div className="grid grid-cols-3 border-b border-zinc-800 bg-zinc-900">
+              <div className="p-6"></div>
+              <div className="p-6 text-center border-l border-zinc-800">
+                <span className="text-lg font-semibold text-zinc-400">Oddiy byudjet ilovalari</span>
               </div>
-              <ul className="space-y-6 text-lg text-zinc-300">
-                <li className="flex items-center gap-3">
-                  <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500" />
-                  <span>There is no financial assistant in Uzbekistan</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500" />
-                  <span>Young adults waste their money on unnecessary expenses because of financial illiteracy</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500" />
-                  <span>Regular people might spend a lot on human financial advisors</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500" />
-                  <span>Research on market price takes longer ⏰</span>
-                </li>
-              </ul>
+              <div className="p-6 text-center border-l border-zinc-800">
+                <span className="text-lg font-bold text-emerald-400">PulBoshi</span>
+              </div>
             </div>
 
-            {/* Card 2: Entrepreneur (Positive) */}
-            <div className="relative rounded-3xl border border-emerald-500/30 bg-emerald-500/5 p-8 md:p-10">
-              <div className="flex items-center justify-between mb-8">
-                <h3 className="text-2xl md:text-3xl font-bold text-emerald-400">Solution</h3>
-                <div className="rounded-full bg-emerald-500/20 p-1">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="text-emerald-500"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            {/* Feature Rows */}
+            {[
+              { feature: "Xarajatlarni kuzatish", normal: true, pulboshi: true },
+              { feature: "AI moliyaviy maslahatchi", normal: false, pulboshi: true },
+              { feature: "Shaxsiylashtirilgan rejalar", normal: false, pulboshi: true },
+              { feature: "Bozor narxlarini tahlil qilish", normal: false, pulboshi: true },
+              { feature: "O'zbek tilida 24/7 yordam", normal: false, pulboshi: true },
+              { feature: "Byudjet kategoriyalari", normal: true, pulboshi: true },
+              { feature: "Aqlli tejash maslahatlari", normal: false, pulboshi: true },
+            ].map((item, index) => (
+              <div
+                key={index}
+                className={`grid grid-cols-3 ${index !== 6 ? 'border-b border-zinc-800' : ''} hover:bg-zinc-800/30 transition-colors`}
+              >
+                <div className="p-6 flex items-center">
+                  <span className="text-lg text-zinc-300">{item.feature}</span>
+                </div>
+                <div className="p-6 flex items-center justify-center border-l border-zinc-800">
+                  {item.normal ? (
+                    <span className="text-2xl text-emerald-500">✔</span>
+                  ) : (
+                    <span className="text-2xl text-orange-500">✖</span>
+                  )}
+                </div>
+                <div className="p-6 flex items-center justify-center border-l border-zinc-800">
+                  {item.pulboshi ? (
+                    <span className="text-2xl text-emerald-500">✔</span>
+                  ) : (
+                    <span className="text-2xl text-orange-500">✖</span>
+                  )}
                 </div>
               </div>
-              <ul className="space-y-6 text-lg text-zinc-300">
-                <li className="flex items-center gap-3">
-                  <span className=" h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500" />
-                  <span>We are the <b>first financial AI assistant</b> in Uzbekistan</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500" />
-                  <span>We help young adults <b>save and spend smarter</b> while understanding their financial situation</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500" />
-                  <span>AI Financial advisor is available <b>24/7 for cheaper/free</b></span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500" />
-                  <span>Our AI tools make it <b>easy to explore</b> market price with very up to date information</span>
-                </li>
-              </ul>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -109,7 +108,7 @@ export default function Home() {
       <section className="py-24 px-4">
         <div className="mx-auto max-w-6xl">
           <h2 className="mb-16 text-center text-3xl font-bold tracking-tight sm:text-5xl">
-            Save & Spend & Invest
+            Tejang, Sarflang va Sarmoya qiling
           </h2>
           <div className="grid gap-8 md:grid-cols-3">
             {/* Survival Mode */}
@@ -117,9 +116,9 @@ export default function Home() {
               <div className="mb-4 inline-block rounded-full bg-red-500/10 p-3 text-red-500">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v20" /><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" /></svg>
               </div>
-              <h3 className="mb-2 text-2xl font-bold text-white">Save</h3>
+              <h3 className="mb-2 text-2xl font-bold text-white">Tejash</h3>
               <p className="text-zinc-400">
-                Critically low funds? We will provide cheapest options on the market with our tools for you to "survive".
+                Mablag'ingiz juda kammi? Biz bozorning eng arzon variantlarini taklif qilamiz, toki siz "omon qolishingiz" uchun.
               </p>
             </div>
 
@@ -128,9 +127,9 @@ export default function Home() {
               <div className="mb-4 inline-block rounded-full bg-blue-500/10 p-3 text-blue-500">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2" /></svg>
               </div>
-              <h3 className="mb-2 text-2xl font-bold text-white">Spend</h3>
+              <h3 className="mb-2 text-2xl font-bold text-white">Sarflash</h3>
               <p className="text-zinc-400">
-                Stable ground? We won't let you waste your money with our AI and tools for optimal prices on the market.
+                Moliyaviy holatingiz barqarormi? Bizning AI vositalarimiz sizga bozordagi eng maqbul narxlarni topishga va pulingizni behuda sarflamaslikka yordam beradi.
               </p>
             </div>
 
@@ -139,9 +138,9 @@ export default function Home() {
               <div className="mb-4 inline-block rounded-full bg-emerald-500/10 p-3 text-emerald-500">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" x2="12" y1="2" y2="22" /><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" /></svg>
               </div>
-              <h3 className="mb-2 text-2xl font-bold text-white">Invest</h3>
+              <h3 className="mb-2 text-2xl font-bold text-white">Sarmoya</h3>
               <p className="text-zinc-400">
-                Want to grow your capital? We will provide smart investment options for you.
+                Kapitalingizni oshirmoqchimisiz? Biz sizga aqlli investitsiya imkoniyatlarini taqdim etamiz.
               </p>
             </div>
           </div>
@@ -152,93 +151,50 @@ export default function Home() {
       <section className="py-24 px-4 bg-zinc-950">
         <div className="mx-auto max-w-4xl">
           <h2 className="mb-16 text-center text-3xl font-bold tracking-tight sm:text-4xl">
-            Team
+            Jamoa
           </h2>
           <div className="grid gap-8 md:grid-cols-2">
             <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-zinc-900 border border-zinc-800">
               <img src="https://xdey7k9l8nr8y6um.public.blob.vercel-storage.com/Abdussomad" alt="Abdussomad Mahmud" className="w-24 h-24 rounded-full mb-4 object-cover" />
               <h3 className="text-xl font-bold text-white">Abdussomad Mahmud</h3>
               <p className="text-blue-400 mb-2">Software Engineer</p>
-              <p className="text-zinc-400 text-sm">Software Engineer experienced in React, React Native, TypeScript, and Next.js for 3 years.</p>
+              <p className="text-zinc-400 text-sm">React, React Native, TypeScript va Next.js bo'yicha 3 yillik tajribaga ega dasturchi.</p>
               <a href="https://www.linkedin.com/in/abdussomad/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 transition-colors text-sm mt-3 inline-flex items-center gap-1">
                 LinkedIn →
               </a>
             </div>
-            <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-zinc-900 border border-zinc-800">
-              <img src="https://xdey7k9l8nr8y6um.public.blob.vercel-storage.com/Umar.jpg" alt="Umar Ibragimov" className="w-24 h-24 rounded-full mb-4 object-cover" />
-              <h3 className="text-xl font-bold text-white">Umar Ibragimov</h3>
-              <p className="text-purple-400 mb-2">Backend Developer & UI/UX Designer</p>
-              <p className="text-zinc-400 text-sm">UX-Focused Express.js and React Developer with a year experience</p>
-            </div>
           </div>
-        </div>
-      </section>
-
-      {/* Why Us Section */}
-      <section className="py-24 px-4">
-        <div className="mx-auto max-w-4xl text-center">
-          <h2 className="mb-8 text-3xl font-bold tracking-tight sm:text-4xl">Why Us?</h2>
-          <p className="text-xl text-zinc-400 leading-relaxed">
-            We don't just write code; we understand the psychology of money.
-            By combining deep technical expertise with behavioral finance, we're building
-            a tool that actually changes habits.
-          </p>
         </div>
       </section>
 
       {/* Roadmap Section */}
       <section className="py-24 px-4 bg-zinc-950">
         <div className="mx-auto max-w-4xl">
-          <h2 className="mb-16 text-center text-3xl font-bold tracking-tight sm:text-4xl">Roadmap</h2>
+          <h2 className="mb-16 text-center text-3xl font-bold tracking-tight sm:text-4xl">Dastur boshqichi</h2>
           <div className="space-y-8">
             <div className="flex gap-4 items-start">
               <div className="mt-1.5 shrink-0 text-green-500">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
               </div>
               <div>
-                <h3 className="text-lg font-bold text-white">Idea</h3>
-                <p className="text-zinc-400">We identified the problem of financial literacy and poor decision-making among most people in Uzbekistan. We share our vision that we are seeing in this product</p>
-              </div>
-            </div>
-            <div className="flex gap-4 items-start">
-              <div className="mt-1.5 shrink-0 text-green-500">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
-              </div>
-              <div>
-                <h3 className="text-lg font-bold text-white">Prototype</h3>
-                <p className="text-zinc-400">Integrated AI with Mobile application and tested AI capabilities.</p>
+                <h3 className="text-lg font-bold text-white">Prototip</h3>
+                <p className="text-zinc-400">Sun'iy intellekt mobil ilovaga integratsiya qilindi va AI imkoniyatlari sinovdan o'tkazildi.</p>
               </div>
             </div>
             <div className="flex gap-4 items-start">
               <div className="w-4 h-4 mt-1.5 rounded-full bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.5)] shrink-0" />
               <div>
-                <h3 className="text-lg font-bold text-white">MVP (Working on)</h3>
-                <p className="text-zinc-400">AI Financial advisor for <b>only students</b></p>
+                <h3 className="text-lg font-bold text-white">MVP</h3>
+                <p className="text-zinc-400"><b>Faqat talabalar</b> uchun sun'iy intellekt moliyaviy maslahatchisi</p>
               </div>
             </div>
-            <div className="flex gap-4 items-start opacity-50">
+            <div className="flex gap-4 items-start">
               <div className="w-4 h-4 mt-1.5 rounded-full bg-zinc-700 shrink-0" />
               <div>
-                <h3 className="text-lg font-bold text-white">Launched</h3>
-                <p className="text-zinc-400">AI Financial advisor for every professionals. Additional tools will be added to enhance AI output. </p>
+                <h3 className="text-lg font-bold text-white">Birinchi foydalanuvchi</h3>
+                <p className="text-zinc-400">Birinchi foydalanuvchilar bu 15-25 yoshdagi o'smirlar</p>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Tech Stack Section */}
-      <section className="py-24 px-4 border-t border-zinc-900">
-        <div className="mx-auto max-w-6xl text-center">
-          <p className="mb-8 text-sm font-semibold uppercase tracking-widest text-zinc-500">
-            Built with
-          </p>
-          <div className="flex flex-wrap justify-center gap-8 md:gap-16 opacity-70 grayscale transition duration-500 hover:grayscale-0">
-            {/* Simple text placeholders for logos for now */}
-            <span className="text-xl font-bold text-zinc-300">React Native</span>
-            <span className="text-xl font-bold text-zinc-300">Expo</span>
-            <span className="text-xl font-bold text-zinc-300">TypeScript</span>
-            <span className="text-xl font-bold text-zinc-300">AI SDK</span>
           </div>
         </div>
       </section>
