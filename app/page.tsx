@@ -1,6 +1,30 @@
+"use client";
+
 import Link from "next/link";
+import posthog from "posthog-js";
 
 export default function Home() {
+  const handleWhyPulboshiClick = () => {
+    posthog.capture("clicked_why_pulboshi", {
+      button_location: "hero_section",
+      button_text: "Nega Pulboshi?",
+    });
+  };
+
+  const handlePlanClick = () => {
+    posthog.capture("clicked_45_day_plan", {
+      button_location: "hero_section",
+      button_text: "45 kunlik reja",
+    });
+  };
+
+  const handleDemoVideoInteraction = () => {
+    posthog.capture("watched_demo_video", {
+      video_source: "youtube",
+      video_id: "OlDjJMbc4Sg",
+    });
+  };
+
   return (
     <main className="min-h-screen bg-black text-white selection:bg-green-500 selection:text-black">
       {/* Hero Section */}
@@ -20,10 +44,10 @@ export default function Home() {
               Ushbu mobil ilova moliyaviy holatingizni tushunish bilan birga tejashingiz, sarflashingiz va aqlli sarmoya kiritishingizga yordam beradi.
             </p>
             <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-              <a href="#solution" className="rounded-full border border-zinc-800 bg-black px-8 py-3 font-semibold text-white transition hover:bg-zinc-900 w-fit">
+              <a href="#solution" onClick={handleWhyPulboshiClick} className="rounded-full border border-zinc-800 bg-black px-8 py-3 font-semibold text-white transition hover:bg-zinc-900 w-fit">
                 Nega Pulboshi?
               </a>
-              <Link href="/45-day-plan" className="rounded-full bg-emerald-500 px-8 py-3 font-bold text-black transition hover:bg-emerald-400 hover:scale-105 active:scale-95 w-fit">
+              <Link href="/45-day-plan" onClick={handlePlanClick} className="rounded-full bg-emerald-500 px-8 py-3 font-bold text-black transition hover:bg-emerald-400 hover:scale-105 active:scale-95 w-fit">
                 45 kunlik reja
               </Link>
             </div>
@@ -53,15 +77,27 @@ export default function Home() {
           <h2 className="mb-8 text-center text-3xl font-bold tracking-tight sm:text-4xl">
             Demo <span className="text-emerald-400">Video</span>
           </h2>
-          <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900 shadow-2xl shadow-emerald-500/10 transition-transform hover:scale-[1.01]">
+          <div
+            className="relative aspect-video w-full overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900 shadow-2xl shadow-emerald-500/10 transition-transform hover:scale-[1.01]"
+            onClick={handleDemoVideoInteraction}
+          >
             <iframe
-              className="absolute inset-0 h-full w-full"
+              className="absolute inset-0 h-full w-full pointer-events-none"
               src="https://www.youtube.com/embed/OlDjJMbc4Sg?si=pLLWuv6L8Oeo8UwF"
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
             ></iframe>
+            <div
+              className="absolute inset-0 cursor-pointer"
+              onClick={(e) => {
+                e.stopPropagation();
+                handleDemoVideoInteraction();
+                // Remove the overlay after first click to allow video interaction
+                (e.target as HTMLElement).style.display = 'none';
+              }}
+            />
           </div>
           <p className="mt-6 text-zinc-400 text-sm">
             PulBoshi qanday ishlashini 5 daqiqada bilib oling. tavsiya etilgan tezlik 1.25x
@@ -164,26 +200,6 @@ export default function Home() {
               <p className="text-zinc-400">
                 Kapitalingizni oshirmoqchimisiz? Biz sizga aqlli investitsiya imkoniyatlarini taqdim etamiz.
               </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="py-24 px-4 bg-zinc-950">
-        <div className="mx-auto max-w-4xl">
-          <h2 className="mb-16 text-center text-3xl font-bold tracking-tight sm:text-4xl">
-            Jamoa
-          </h2>
-          <div className="grid gap-8 md:grid-cols-2">
-            <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-zinc-900 border border-zinc-800">
-              <img src="https://xdey7k9l8nr8y6um.public.blob.vercel-storage.com/Abdussomad" alt="Abdussomad Mahmud" className="w-24 h-24 rounded-full mb-4 object-cover" />
-              <h3 className="text-xl font-bold text-white">Abdussomad Mahmud</h3>
-              <p className="text-blue-400 mb-2">Software Engineer</p>
-              <p className="text-zinc-400 text-sm">React, React Native, TypeScript va Next.js bo'yicha 3 yillik tajribaga ega dasturchi.</p>
-              <a href="https://www.linkedin.com/in/abdussomad/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 transition-colors text-sm mt-3 inline-flex items-center gap-1">
-                LinkedIn →
-              </a>
             </div>
           </div>
         </div>

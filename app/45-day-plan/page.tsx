@@ -1,4 +1,8 @@
+"use client";
+
 import Link from 'next/link';
+import posthog from 'posthog-js';
+import { useRef } from 'react';
 
 const weeks = [
     {
@@ -70,6 +74,29 @@ const weeks = [
 ];
 
 export default function Plan45Day() {
+    // Track page view once per page load using a ref to avoid duplicate tracking
+    const hasTrackedPageView = useRef(false);
+    if (!hasTrackedPageView.current && typeof window !== 'undefined') {
+        posthog.capture("viewed_45_day_plan_page", {
+            page_title: "45 kunlik moliyaviy rivojlanish rejasi",
+            total_weeks: weeks.length,
+        });
+        hasTrackedPageView.current = true;
+    }
+
+    const handleBackToHomeClick = () => {
+        posthog.capture("clicked_back_to_home", {
+            from_page: "45-day-plan",
+        });
+    };
+
+    const handleWeekCardClick = (weekTitle: string, weekNumber: number) => {
+        posthog.capture("viewed_week_details", {
+            week_title: weekTitle,
+            week_number: weekNumber,
+        });
+    };
+
     return (
         <main className="min-h-screen bg-black text-white selection:bg-emerald-500 selection:text-black font-sans">
             {/* Background Decor */}
@@ -82,6 +109,7 @@ export default function Plan45Day() {
                 {/* Navigation */}
                 <Link
                     href="/"
+                    onClick={handleBackToHomeClick}
                     className="group mb-12 inline-flex items-center gap-2 text-zinc-400 transition hover:text-white"
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:-translate-x-1">
@@ -105,7 +133,8 @@ export default function Plan45Day() {
                     {weeks.map((week, index) => (
                         <div
                             key={index}
-                            className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8 transition hover:border-emerald-500/50 hover:bg-white/[0.08]"
+                            onClick={() => handleWeekCardClick(week.title, index + 1)}
+                            className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8 transition hover:border-emerald-500/50 hover:bg-white/[0.08] cursor-pointer"
                         >
                             <div className="mb-6 flex items-center justify-between">
                                 <div className="rounded-2xl bg-white/5 p-3 group-hover:bg-emerald-500/10 transition-colors">
