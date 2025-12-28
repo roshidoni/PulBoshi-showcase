@@ -31,73 +31,52 @@ export default function Home() {
       <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden py-24">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-stops))] from-blue-900/20 via-black to-black" />
 
-        <div className="container mx-auto px-6 md:px-6 w-full md:grid md:grid-cols-2 md:gap-12 md:text-left">
+        <div className="container mx-auto px-6 w-full text-center">
           {/* Left Column: Headline & CTA */}
           <div className="flex flex-col justify-center z-10">
-            <h1 className="mb-6 text-5xl font-bold tracking-tighter sm:text-4xl bg-linear-to-b from-white to-zinc-500 bg-clip-text text-transparent text-center md:text-left">
+            <h1 className="mb-6 text-5xl font-bold tracking-tighter sm:text-4xl bg-linear-to-b from-white to-zinc-500 bg-clip-text text-transparent">
               <span className="text-emerald-400 drop-shadow-[0_0_10px_rgba(52,211,153,0.4)]">O'zbekistondagi</span>{" "}
               <span className="text-emerald-400 drop-shadow-[0_0_10px_rgba(52,211,153,0.4)]">#1</span>{" "}
               <span className="text-white">AI</span>{" "}
               moliyaviy maslahatchi
             </h1>
-            <p className="mb-8 max-w-2xl text-lg text-zinc-400 sm:text-xl text-center md:text-left">
+            <p className="mb-8 mx-auto max-w-2xl text-lg text-zinc-400 sm:text-xl">
               Ushbu mobil ilova moliyaviy holatingizni tushunish bilan birga tejashingiz, sarflashingiz va aqlli sarmoya kiritishingizga yordam beradi.
             </p>
-            <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+            <div className="flex flex-wrap gap-4 justify-center">
               <a href="#solution" onClick={handleWhyPulboshiClick} className="rounded-full border border-zinc-800 bg-black px-8 py-3 font-semibold text-white transition hover:bg-zinc-900 w-fit">
                 Nega Pulboshi?
               </a>
               <Link href="/45-day-plan" onClick={handlePlanClick} className="rounded-full bg-emerald-500 px-8 py-3 font-bold text-black transition hover:bg-emerald-400 hover:scale-105 active:scale-95 w-fit">
                 45 kunlik reja
               </Link>
+              <a href="#demo" onClick={handleDemoVideoInteraction} className="rounded-full border border-zinc-800 bg-zinc-900/50 px-8 py-3 font-semibold text-white transition hover:bg-zinc-800 w-fit flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="5 3 19 12 5 21 5 3" /></svg>
+                Watch demo
+              </a>
             </div>
           </div>
 
-          {/* Right Column: iPhone Video Demo */}
-          <div className="relative mt-12 flex justify-center md:mt-0 z-10">
-            <div className="relative mx-auto border-zinc-800 bg-zinc-800 border-[14px] rounded-[35px] h-[600px] w-[300px] shadow-xl">
-              <div className="w-[148px] h-[18px] bg-zinc-800 top-0 rounded-b-[1rem] left-1/2 -translate-x-1/2 absolute z-20"></div>
-              <div className="h-[32px] w-[3px] bg-zinc-800 absolute -start-[17px] top-[72px] rounded-s-lg"></div>
-              <div className="h-[46px] w-[3px] bg-zinc-800 absolute -start-[17px] top-[124px] rounded-s-lg"></div>
-              <div className="h-[46px] w-[3px] bg-zinc-800 absolute -start-[17px] top-[178px] rounded-s-lg"></div>
-              <div className="h-[64px] w-[3px] bg-zinc-800 absolute -end-[17px] top-[142px] rounded-e-lg"></div>
-              <div className="rounded-[21px] overflow-hidden w-full h-full bg-zinc-900 relative">
-                <video className="w-full h-full object-cover" autoPlay loop muted playsInline>
-                  <source src="https://xdey7k9l8nr8y6um.public.blob.vercel-storage.com/AI500" type="video/mp4" />
-                </video>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
       {/* Demo Video Section */}
-      <section className="py-24 px-4 bg-zinc-950/50">
+      <section id="demo" className="py-24 px-4 bg-zinc-950/50">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="mb-8 text-center text-3xl font-bold tracking-tight sm:text-4xl">
             Demo <span className="text-emerald-400">Video</span>
           </h2>
           <div
             className="relative aspect-video w-full overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900 shadow-2xl shadow-emerald-500/10 transition-transform hover:scale-[1.01]"
-            onClick={handleDemoVideoInteraction}
           >
             <iframe
-              className="absolute inset-0 h-full w-full pointer-events-none"
+              className="absolute inset-0 h-full w-full"
               src="https://www.youtube.com/embed/OlDjJMbc4Sg?si=pLLWuv6L8Oeo8UwF"
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
             ></iframe>
-            <div
-              className="absolute inset-0 cursor-pointer"
-              onClick={(e) => {
-                e.stopPropagation();
-                handleDemoVideoInteraction();
-                // Remove the overlay after first click to allow video interaction
-                (e.target as HTMLElement).style.display = 'none';
-              }}
-            />
           </div>
           <p className="mt-6 text-zinc-400 text-sm">
             PulBoshi qanday ishlashini 5 daqiqada bilib oling. tavsiya etilgan tezlik 1.25x
@@ -131,13 +110,12 @@ export default function Home() {
               { feature: "AI moliyaviy maslahatchi", normal: false, pulboshi: true },
               { feature: "Shaxsiylashtirilgan rejalar", normal: false, pulboshi: true },
               { feature: "Bozor narxlarini tahlil qilish", normal: false, pulboshi: true },
-              { feature: "O'zbek tilida 24/7 yordam", normal: false, pulboshi: true },
               { feature: "Byudjet kategoriyalari", normal: true, pulboshi: true },
               { feature: "Aqlli tejash maslahatlari", normal: false, pulboshi: true },
             ].map((item, index) => (
               <div
                 key={index}
-                className={`grid grid-cols-3 ${index !== 6 ? 'border-b border-zinc-800' : ''} hover:bg-zinc-800/30 transition-colors`}
+                className={`grid grid-cols-3 ${index !== 5 ? 'border-b border-zinc-800' : ''} hover:bg-zinc-800/30 transition-colors`}
               >
                 <div className="p-6 flex items-center">
                   <span className="text-lg text-zinc-300">{item.feature}</span>
@@ -236,6 +214,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </main>
+    </main >
   );
 }
