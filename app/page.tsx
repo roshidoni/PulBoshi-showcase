@@ -31,36 +31,53 @@ export default function Home() {
       <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden py-24">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-stops))] from-blue-900/20 via-black to-black" />
 
-        <div className="container mx-auto px-6 w-full text-center">
-          {/* Left Column: Headline & CTA */}
-          <div className="flex flex-col justify-center z-10">
-            <h1 className="mb-6 text-5xl font-bold tracking-tighter sm:text-4xl text-white">
-              <span className="text-emerald-400 drop-shadow-[0_0_10px_rgba(52,211,153,0.4)]">PulBoshi - </span>
-              <span className="text-white">O'zbekistondagi</span>{" "}
-              <span className="text-white">#1</span>{" "}
-              <span className="text-white">AI</span>{" "}
-              moliyaviy maslahatchi
-            </h1>
-            <p className="mb-8 mx-auto max-w-2xl text-lg text-zinc-400 sm:text-xl">
-              Ushbu mobil ilova moliyaviy holatingizni tushunish bilan birga tejashingiz, sarflashingiz va aqlli sarmoya kiritishingizga yordam beradi.
-            </p>
-            <p className="mb-8 text-gray-400 max-w-xl mx-auto">
-              *Bu Pulboshi ilovasini rasmiy vebsayti emas. Vebsayt Uzcombinator dasturi uchun ilova va uni kelajakdagi maqsadlarini tanishtirish uchun yaratilgan.
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <a href="#solution" onClick={handleWhyPulboshiClick} className="rounded-full border border-zinc-800 bg-black px-8 py-3 font-semibold text-white transition hover:bg-zinc-900 w-fit">
-                Nega Pulboshi?
-              </a>
-              <Link href="/45-day-plan" onClick={handlePlanClick} className="rounded-full bg-emerald-500 px-8 py-3 font-bold text-black transition hover:bg-emerald-400 hover:scale-105 active:scale-95 w-fit">
-                45 kunlik reja
-              </Link>
-              <a href="#demo" onClick={handleDemoVideoInteraction} className="rounded-full border border-zinc-800 bg-zinc-900/50 px-8 py-3 font-semibold text-white transition hover:bg-zinc-800 w-fit flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="5 3 19 12 5 21 5 3" /></svg>
-                Watch demo
-              </a>
+        <div className="container mx-auto px-6 w-full">
+          <div className="grid items-center gap-12 lg:gap-16 md:grid-cols-2">
+            {/* Left Column: Headline & CTA */}
+            <div className="flex flex-col justify-center z-10 text-center md:text-left md:items-start">
+              <h1 className="mb-6 text-5xl font-bold tracking-tighter sm:text-4xl text-white">
+                <span className="text-emerald-400 drop-shadow-[0_0_10px_rgba(52,211,153,0.4)]">PulBoshi - </span>
+                <span className="text-white">O'zbekistondagi</span>{" "}
+                <span className="text-white">#1</span>{" "}
+                <span className="text-white">AI</span>{" "}
+                moliyaviy maslahatchi
+              </h1>
+              <p className="mb-8 mx-auto md:mx-0 max-w-2xl text-lg text-zinc-400 sm:text-xl">
+                Ushbu mobil ilova moliyaviy holatingizni tushunish bilan birga tejashingiz, sarflashingiz va aqlli sarmoya kiritishingizga yordam beradi.
+              </p>
+              <p className="mb-8 text-gray-400 max-w-xl mx-auto md:mx-0">
+                *Bu Pulboshi ilovasini rasmiy vebsayti emas. Vebsayt Uzcombinator dasturi uchun ilova va uni kelajakdagi maqsadlarini tanishtirish uchun yaratilgan.
+              </p>
+              <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+                <a href="#solution" onClick={handleWhyPulboshiClick} className="rounded-full border border-zinc-800 bg-black px-8 py-3 font-semibold text-white transition hover:bg-zinc-900 w-fit">
+                  Nega Pulboshi?
+                </a>
+                <Link href="/45-day-plan" onClick={handlePlanClick} className="rounded-full bg-emerald-500 px-8 py-3 font-bold text-black transition hover:bg-emerald-400 hover:scale-105 active:scale-95 w-fit">
+                  45 kunlik reja
+                </Link>
+                <a href="#demo" onClick={handleDemoVideoInteraction} className="rounded-full border border-zinc-800 bg-zinc-900/50 px-8 py-3 font-semibold text-white transition hover:bg-zinc-800 w-fit flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="5 3 19 12 5 21 5 3" /></svg>
+                  Watch demo
+                </a>
+              </div>
+            </div>
+
+            {/* Right Column: Phone Preview */}
+            <div className="relative mt-12 flex justify-center md:mt-0 z-10">
+              <div className="relative mx-auto border-zinc-800 bg-zinc-800 border-[14px] rounded-[35px] h-[600px] w-[300px] shadow-xl">
+                <div className="w-[148px] h-[18px] bg-zinc-800 top-0 rounded-b-[1rem] left-1/2 -translate-x-1/2 absolute z-20"></div>
+                <div className="h-[32px] w-[3px] bg-zinc-800 absolute -start-[17px] top-[72px] rounded-s-lg"></div>
+                <div className="h-[46px] w-[3px] bg-zinc-800 absolute -start-[17px] top-[124px] rounded-s-lg"></div>
+                <div className="h-[46px] w-[3px] bg-zinc-800 absolute -start-[17px] top-[178px] rounded-s-lg"></div>
+                <div className="h-[64px] w-[3px] bg-zinc-800 absolute -end-[17px] top-[142px] rounded-e-lg"></div>
+                <div className="rounded-[21px] overflow-hidden w-full h-full bg-zinc-900 relative">
+                  <video className="w-full h-full object-cover" autoPlay loop muted playsInline>
+                    <source src="https://lnleghisfvxllrqu.public.blob.vercel-storage.com/Pulboshi_demo" type="video/mp4" />
+                  </video>
+                </div>
+              </div>
             </div>
           </div>
-
         </div>
       </section>
 
