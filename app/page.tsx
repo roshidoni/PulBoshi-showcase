@@ -34,14 +34,18 @@ export default function Home() {
         <div className="container mx-auto px-6 w-full text-center">
           {/* Left Column: Headline & CTA */}
           <div className="flex flex-col justify-center z-10">
-            <h1 className="mb-6 text-5xl font-bold tracking-tighter sm:text-4xl bg-linear-to-b from-white to-zinc-500 bg-clip-text text-transparent">
-              <span className="text-emerald-400 drop-shadow-[0_0_10px_rgba(52,211,153,0.4)]">O'zbekistondagi</span>{" "}
-              <span className="text-emerald-400 drop-shadow-[0_0_10px_rgba(52,211,153,0.4)]">#1</span>{" "}
+            <h1 className="mb-6 text-5xl font-bold tracking-tighter sm:text-4xl text-white">
+              <span className="text-emerald-400 drop-shadow-[0_0_10px_rgba(52,211,153,0.4)]">PulBoshi - </span>
+              <span className="text-white">O'zbekistondagi</span>{" "}
+              <span className="text-white">#1</span>{" "}
               <span className="text-white">AI</span>{" "}
               moliyaviy maslahatchi
             </h1>
             <p className="mb-8 mx-auto max-w-2xl text-lg text-zinc-400 sm:text-xl">
               Ushbu mobil ilova moliyaviy holatingizni tushunish bilan birga tejashingiz, sarflashingiz va aqlli sarmoya kiritishingizga yordam beradi.
+            </p>
+            <p className="mb-8 text-gray-400 max-w-xl mx-auto">
+              *Bu Pulboshi ilovasini rasmiy vebsayti emas. Vebsayt Uzcombinator dasturi uchun ilova va uni kelajakdagi maqsadlarini tanishtirish uchun yaratilgan.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <a href="#solution" onClick={handleWhyPulboshiClick} className="rounded-full border border-zinc-800 bg-black px-8 py-3 font-semibold text-white transition hover:bg-zinc-900 w-fit">
@@ -103,45 +107,90 @@ export default function Home() {
                 <span className="text-lg font-bold text-emerald-400">PulBoshi</span>
               </div>
             </div>
-
-            {/* Feature Rows */}
-            {[
-              { feature: "Xarajatlarni kuzatish", normal: true, pulboshi: true },
-              { feature: "AI moliyaviy maslahatchi", normal: false, pulboshi: true },
-              { feature: "Shaxsiylashtirilgan rejalar", normal: false, pulboshi: true },
-              { feature: "Bozor narxlarini tahlil qilish", normal: false, pulboshi: true },
-              { feature: "Byudjet kategoriyalari", normal: true, pulboshi: true },
-              { feature: "Aqlli tejash maslahatlari", normal: false, pulboshi: true },
-            ].map((item, index) => (
-              <div
-                key={index}
-                className={`grid grid-cols-3 ${index !== 5 ? 'border-b border-zinc-800' : ''} hover:bg-zinc-800/30 transition-colors`}
-              >
-                <div className="p-6 flex items-center">
-                  <span className="text-lg text-zinc-300">{item.feature}</span>
-                </div>
-                <div className="p-6 flex items-center justify-center border-l border-zinc-800">
-                  {item.normal ? (
-                    <span className="text-2xl text-emerald-500">✔</span>
-                  ) : (
-                    <span className="text-2xl text-orange-500">✖</span>
-                  )}
-                </div>
-                <div className="p-6 flex items-center justify-center border-l border-zinc-800">
-                  {item.pulboshi ? (
-                    <span className="text-2xl text-emerald-500">✔</span>
-                  ) : (
-                    <span className="text-2xl text-orange-500">✖</span>
-                  )}
-                </div>
+            <div
+              className="grid grid-cols-3 hover:bg-zinc-800/30 transition-colors"
+            >
+              <div className="p-6 flex items-center">
+                <span className="text-lg text-zinc-300">Xarajatlarni kuzatish</span>
               </div>
-            ))}
+              <div className="p-6 flex items-center justify-center border-l border-zinc-800">
+                <span className="text-2xl text-emerald-500">✔</span>
+              </div>
+              <div className="p-6 flex items-center justify-center border-l border-zinc-800">
+                <span className="text-2xl text-emerald-500">✔ (jarayonida)</span>
+              </div>
+            </div>
+            <div
+              className="grid grid-cols-3 hover:bg-zinc-800/30 transition-colors"
+            >
+              <div className="p-6 flex items-center">
+                <span className="text-lg text-zinc-300">AI moliyaviy maslahatchi</span>
+              </div>
+              <div className="p-6 flex items-center justify-center border-l border-zinc-800">
+                <span className="text-2xl text-orange-500">✖</span>
+              </div>
+              <div className="p-6 flex items-center justify-center border-l border-zinc-800">
+                <span className="text-2xl text-emerald-500">✔</span>
+              </div>
+            </div>
+            <div
+              className={`grid grid-cols-3 hover:bg-zinc-800/30 transition-colors`}
+            >
+              <div className="p-6 flex items-center">
+                <span className="text-lg text-zinc-300">Shaxsiylashtirilgan rejalar</span>
+              </div>
+              <div className="p-6 flex items-center justify-center border-l border-zinc-800">
+                <span className="text-2xl text-orange-500">✖</span>
+              </div>
+              <div className="p-6 flex items-center justify-center border-l border-zinc-800">
+                <span className="text-2xl text-emerald-500">✔</span>
+              </div>
+            </div>
+            <div
+              className={`grid grid-cols-3 hover:bg-zinc-800/30 transition-colors`}
+            >
+              <div className="p-6 flex items-center">
+                <span className="text-lg text-zinc-300">Bozor narxlarini tahlil qilish</span>
+              </div>
+              <div className="p-6 flex items-center justify-center border-l border-zinc-800">
+                <span className="text-2xl text-orange-500">✖</span>
+              </div>
+              <div className="p-6 flex items-center justify-center border-l border-zinc-800">
+                <span className="text-2xl text-emerald-500">✔ (jarayonida)</span>
+              </div>
+            </div>
+            <div
+              className={`grid grid-cols-3 hover:bg-zinc-800/30 transition-colors`}
+            >
+              <div className="p-6 flex items-center">
+                <span className="text-lg text-zinc-300">Byudjet kategoriyalari</span>
+              </div>
+              <div className="p-6 flex items-center justify-center border-l border-zinc-800">
+                <span className="text-2xl text-emerald-500">✔</span>
+              </div>
+              <div className="p-6 flex items-center justify-center border-l border-zinc-800">
+                <span className="text-2xl text-emerald-500">✔</span>
+              </div>
+            </div>
+            <div
+              className={`grid grid-cols-3 hover:bg-zinc-800/30 transition-colors`}
+            >
+              <div className="p-6 flex items-center">
+                <span className="text-lg text-zinc-300">AI moliyaviy maslahatchi</span>
+              </div>
+              <div className="p-6 flex items-center justify-center border-l border-zinc-800">
+                <span className="text-2xl text-orange-500">✖</span>
+              </div>
+              <div className="p-6 flex items-center justify-center border-l border-zinc-800">
+                <span className="text-2xl text-emerald-500">✔</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Solution / Modes Section */}
-      <section className="py-24 px-4">
+      <section className="py-24 px-4" >
         <div className="mx-auto max-w-6xl">
           <h2 className="mb-16 text-center text-3xl font-bold tracking-tight sm:text-5xl">
             Tejang, Sarflang va Sarmoya qiling
@@ -181,10 +230,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Roadmap Section */}
-      <section className="py-24 px-4 bg-zinc-950">
+      <section className="py-24 px-4 bg-zinc-950" >
         <div className="mx-auto max-w-4xl">
           <h2 className="mb-16 text-center text-3xl font-bold tracking-tight sm:text-4xl">Dastur boshqichi</h2>
           <div className="space-y-8">
@@ -211,9 +260,16 @@ export default function Home() {
                 <p className="text-zinc-400">Birinchi foydalanuvchilar bu 15-25 yoshdagi o'smirlar</p>
               </div>
             </div>
+            <div className="flex gap-4 items-start">
+              <div className="w-4 h-4 mt-1.5 rounded-full bg-zinc-700 shrink-0" />
+              <div>
+                <h3 className="text-lg font-bold text-white">Universal ilova</h3>
+                <p className="text-zinc-400">Barcha kasb va yoshdagi foydalanuvchilar uchun</p>
+              </div>
+            </div>
           </div>
         </div>
-      </section>
+      </section >
     </main >
   );
 }
